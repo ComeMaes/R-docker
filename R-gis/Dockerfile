@@ -1,4 +1,4 @@
-FROM comaes/R-base
+FROM comaes/r-base
 
 #install required system libraries ("unstable" tag refers to the debian base image for which some libraries
 # are marked as unstable at the time of creation of this file)
