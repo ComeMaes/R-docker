@@ -22,6 +22,9 @@ RUN  R -e "install.packages('googleVis', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('scales', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('uuid', repos='http://cran.rstudio.com/')"
+RUN  R -e "install.packages('data.table', repos='http://cran.rstudio.com/')"
+RUN  R -e "install.packages('DT', repos='http://cran.rstudio.com/')"
+RUN  R -e "install.packages('shinyBS', repos='http://cran.rstudio.com/')"
 
 #run server 
 CMD ["/usr/bin/shiny-server.sh"]

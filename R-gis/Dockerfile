@@ -2,8 +2,8 @@ FROM comaes/r-base
 
 #install required system libraries ("unstable" tag refers to the debian base image for which some libraries
 # are marked as unstable at the time of creation of this file)
-RUN apt-get update && apt-get install -y -q -t unstable libssl-dev \
-                     libgeos++-dev \
+RUN apt-get update
+RUN  apt-get install -y -q -t unstable libgeos++-dev \
                      libgeos-3.5.1 \
                      libgeos-c1v5 \
                      libgeos-dbg \
