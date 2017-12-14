@@ -2,10 +2,12 @@ FROM rocker/shiny
 
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get update
-RUN  apt-get install -y -q -t unstable libssl-dev 
+RUN  apt-get install -y -q -t unstable libssl-dev
 #install R dependencies
 RUN  R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('httr', repos='http://cran.rstudio.com/')"
+RUN  R -e "install.packages('rjson', repos='http://cran.rstudio.com/')"
+RUN  R -e "install.packages('reshape2', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('xts', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('shinydashboard', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('plyr', repos='http://cran.rstudio.com/')"
@@ -25,6 +27,10 @@ RUN  R -e "install.packages('uuid', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('data.table', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('DT', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('shinyBS', repos='http://cran.rstudio.com/')"
+RUN  R -e "install.packages('stringr', repos='http://cran.rstudio.com/')"
+RUN  R -e "install.packages('tidyr', repos='http://cran.rstudio.com/')"
+RUN  R -e "install.packages('listviewer', repos='http://cran.rstudio.com/')"
+RUN  R -e "devtools::install_github('hrbrmstr/jsonview')"
 
-#run server 
+#run server
 CMD ["/usr/bin/shiny-server.sh"]
