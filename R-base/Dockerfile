@@ -1,8 +1,8 @@
 FROM rocker/shiny
 
-RUN rm -rf /var/lib/apt/lists/*
+# RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get update
-RUN  apt-get install -y -q -t unstable libssl-dev
+RUN  apt-get install -y libssl-dev
 #install R dependencies
 RUN  R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
 RUN  R -e "install.packages('httr', repos='http://cran.rstudio.com/')"
